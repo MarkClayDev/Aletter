@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A letter</title>
+    <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Hi Love!</strong>
+                        <p>
+                            Hi love! Sinadya ko din na sana mag kita tayo this day. And just a simple letter kasi hindi ako makapag sulat or panget yung sulat ko. Thank you love for supporting me sa career ko and also just wanna say na love na love kitaaaa! 3 months before yung taong nasa tabi mo ngayon hindi naman siya ganon or rather onti onting nababalik na yung ugali na kung ano yung nararamdaman niya nalalabas niya. And thank you for being one of the reasons why nababalik siya. I love you Ajih!
+                        <br>-Your Techy Clay </br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        const letter = document.querySelector('.letter');
+        let heartClicked = false;
+
+        envelope.addEventListener('click', (event) => {
+            if (!heartClicked && event.target.classList.contains('heart')) {
+                envelope.classList.toggle('flap');
+                heartClicked = true; // Ensure letter click only after heart click
+            }
+        });
+
+        letter.addEventListener('click', () => {
+            if (heartClicked) {
+                letter.classList.toggle('enlarge'); // Toggle the enlargement of the letter
+                envelope.classList.add('hide-envelope'); // Add class to hide the envelope
+            }
+        });
+    </script>
+</body>
+</html>
